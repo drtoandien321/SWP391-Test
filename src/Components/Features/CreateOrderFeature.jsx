@@ -1639,21 +1639,8 @@ const PromotionStep = ({ promotions, selectedPromotion, onSelect, isLoading, err
         <div className="spinner"></div>
         <p>Đang tải danh sách khuyến mãi...</p>
       </div>
-    ) : error ? (
-      <div className="promotion-error-container">
-        <p>
-          {error}
-        </p>
-        <p className="discount-hint">
-          Nếu bạn không muốn áp dụng khuyến mãi, hãy bấm "Tiếp tục" để qua bước tiếp theo.
-        </p>
-      </div>
     ) : promotions.length === 0 ? (
-      <div className="empty-promotion-box">
-        <h4 className="empty-promotion-title">Không có khuyến mãi nào</h4>
-        <p className="empty-promotion-text">Hiện tại đại lý chưa có chương trình khuyến mãi nào đang hoạt động.</p>
-      </div>
-    ) : (
+      // Không có khuyến mãi → chỉ hiển thị "Không áp dụng khuyến mãi"
       <div className="promotions-grid">
         <div 
           className={`promotion-item ${!selectedPromotion ? 'selected' : ''}`}
@@ -1667,7 +1654,10 @@ const PromotionStep = ({ promotions, selectedPromotion, onSelect, isLoading, err
             {!selectedPromotion ? '✓' : ''}
           </div>
         </div>
-        
+      </div>
+    ) : (
+      // Có khuyến mãi → chỉ hiển thị danh sách khuyến mãi
+      <div className="promotions-grid">
         {promotions.map(promotion => (
           <div 
             key={promotion.promotionId} 
