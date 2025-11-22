@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.new-dealer-manager-layout {
+  display: flex;
+  height: 100vh;
+  background: #FAFBFC;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue, Arial, sans-serif;
+}
+
+.new-dealer-manager-layout .sidebar {
+  width: 260px;
+  background: #FFFFFF !important;
+  color: #1F2937 !important;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-right: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 100;
+}
+
+.new-dealer-manager-layout .sidebar.collapsed {
+  width: 60px;
+}
+
+.new-dealer-manager-layout .sidebar.collapsed .sidebar-header {
+  padding: 16px 10px;
+  justify-content: center;
+  border-bottom: none;
+}
+
+.new-dealer-manager-layout .sidebar.collapsed .sidebar-menu {
+  display: none;
+}
+
+.new-dealer-manager-layout .sidebar-header {
+  padding: 16px 10px;
+  border-bottom: 1px solid #F3F4F6;
+  background: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.new-dealer-manager-layout .logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #2563EB !important;
+  white-space: nowrap;
+}
+
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  color: #6B7280;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.sidebar-toggle:hover {
+  background: #F3F4F6;
+  color: #2563EB;
+}
+
+.sidebar-menu {
+  padding: 8px 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 2px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  position: relative;
+  color: #6B7280;
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: #2563EB;
+  border-radius: 0 2px 2px 0;
+  transition: height 0.2s ease;
+}
+
+.menu-item:hover {
+  background: #F3F4F6;
+  color: #1F2937;
+}
+
+.menu-item:hover::before {
+  height: 24px;
+}
+
+.menu-item.active {
+  background: #EFF6FF;
+  color: #2563EB;
+  font-weight: 500;
+}
+
+.menu-item.active::before {
+  height: 28px;
+}
+
+.menu-text {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-item.active .menu-text {
+  font-weight: 500;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.top-header {
+  background: #FFFFFF;
+  padding: 16px 32px;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.header-left h1 {
+  color: #1F2937;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-info:hover {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background: #2563EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #1F2937;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.user-role {
+  color: #6B7280;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.logout-button {
+  background: #EF4444;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #DC2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.content-wrapper {
+  flex: 1;
+  background: #FAFBFC;
+  overflow-y: auto;
+}
+
+.content-area {
+  padding: 24px 32px;
+  background: #FAFBFC;
+  min-height: 100%;
+}
+
+.dealer-footer {
+  background: #FFFFFF;
+  color: #1F2937;
+  padding: 16px 32px;
+  border-top: 1px solid #E5E7EB;
+  flex-shrink: 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-label {
+  font-size: 0.6875rem;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.footer-value {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #1F2937;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+  margin-top: 8px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .new-dealer-manager-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .sidebar-header {
+    padding: 14px 16px;
+  }
+  .sidebar-menu {
+    display: flex;
+    padding: 10px 12px;
+    overflow-x: auto;
+    gap: 8px;
+  }
+  .menu-item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 14px;
+    min-width: 90px;
+    text-align: center;
+    margin: 0;
+  }
+  .menu-item::before {
+    display: none;
+  }
+  .menu-text {
+    font-size: 0.75rem;
+  }
+  .top-header {
+    padding: 12px 16px;
+  }
+  .header-left h1 {
+    font-size: 1.125rem;
+  }
+  .user-info {
+    padding: 6px 10px;
+  }
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8125rem;
+  }
+  .user-details {
+    display: none;
+  }
+  .logout-button {
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+  }
+  .content-area {
+    padding: 16px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .footer-section {
+    padding: 12px;
+  }
+  .dealer-footer {
+    padding: 16px;
+  }
+}

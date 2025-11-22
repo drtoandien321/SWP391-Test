@@ -1,0 +1,120 @@
+/* Import base styles from OrderFeatureManagement&Payment.css */
+@import url('../Components/Features/OrderFeatureManagement&Payment.css');
+
+/* Customize header gradient for Manager - same color scheme as other pages */
+.order-management-payment-header {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+}
+
+/* Manager Action Buttons */
+.btn-success {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+.btn-success:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-failed {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-failed:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-failed:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Action Buttons */
+.confirm-btn {
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+}
+
+.confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reject-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.reject-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Inline style replacements for OrderManagement */
+.vehicle-name-empty {
+  font-style: italic;
+  color: #999;
+}
+
+.summary-row.discount {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.no-data-message {
+  font-style: italic;
+  color: #999;
+  padding: 10px;
+}
+
+
+/* Hide all icons */
+.order-management-header-icon, .no-orders-icon, .section-icon { display: none; }

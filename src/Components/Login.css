@@ -1,0 +1,329 @@
+/* Login Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100vh;
+  background: url('/images/hinhnenlogin1.jpg') center center/cover no-repeat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Form Container - TĂNG KÍCH THƯỚC */
+.login-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
+  padding: 32px 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.login-form-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Header - TĂNG FONT SIZE */
+.login-header {
+  text-align: center;
+  margin-bottom: 50px; /* Tăng từ 40px */
+}
+
+.login-header h1 {
+  color: #2c3e50;
+  font-size: 3rem; /* Tăng từ 2.5rem */
+  font-weight: 700;
+  margin: 0 0 15px 0; /* Tăng margin */
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 1.2rem; /* Tăng từ 1rem */
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Form Styling - TĂNG SPACING */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Tăng từ 25px */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Tăng từ 8px */
+}
+
+/* Label - TĂNG FONT SIZE */
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem; /* Tăng từ 0.95rem */
+}
+
+/* Input - TĂNG PADDING VÀ FONT SIZE */
+.form-group input {
+  padding: 18px 20px; /* Tăng từ 15px */
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  font-size: 1.1rem; /* Tăng từ 1rem */
+  transition: all 0.3s ease;
+  background: white;
+  color: #2c3e50;
+  min-height: 24px; /* Thêm min-height */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Messages - TĂNG FONT SIZE */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.95rem; /* Tăng từ 0.85rem */
+  font-weight: 500;
+  margin-top: 8px; /* Tăng từ 5px */
+}
+
+.general-error {
+  background: rgba(231, 76, 60, 0.1);
+  padding: 16px; /* Tăng từ 12px */
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  white-space: pre-line;
+  line-height: 1.4;
+  font-size: 1rem; /* Thêm font-size */
+}
+
+/* Form Options - TĂNG SPACING */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Tăng từ 15px */
+  margin-top: 10px; /* Thêm margin top */
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Tăng từ 8px */
+}
+
+/* Checkbox - TĂNG KÍCH THƯỚC */
+.remember-me input[type="checkbox"] {
+  width: 20px; /* Tăng từ 18px */
+  height: 20px; /* Tăng từ 18px */
+  accent-color: #2563EB;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: 1rem; /* Tăng từ 0.9rem */
+  color: #555;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.forgot-password-btn {
+  background: none;
+  border: none;
+  color: #222;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+  color: #1D4ED8;
+}
+
+.forgot-password-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Forgot Password Section - TĂNG PADDING */
+.forgot-password-section {
+  background: rgba(102, 126, 234, 0.05);
+  padding: 24px; /* Tăng từ 20px */
+  border-radius: 12px;
+  border-left: 4px solid #2563EB;
+  margin-top: 15px; /* Tăng từ 10px */
+}
+
+.forgot-password-text {
+  margin: 0 0 12px 0; /* Tăng margin */
+  color: #555;
+  font-size: 1rem; /* Tăng từ 0.9rem */
+  line-height: 1.5;
+}
+
+.contact-info {
+  margin: 0;
+  font-weight: 600;
+  color: #2563EB;
+  font-size: 0.95rem; /* Tăng từ 0.85rem */
+}
+
+/* Login Button - TĂNG KÍCH THƯỚC */
+.login-button {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: white;
+  border: none;
+  padding: 20px 32px; /* Tăng từ 16px 24px */
+  border-radius: 12px;
+  font-size: 1.2rem; /* Tăng từ 1.1rem */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Tăng từ 10px */
+  margin-top: 20px; /* Tăng từ 10px */
+  min-height: 60px; /* Thêm min-height */
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.login-button.loading {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Spinner - TĂNG KÍCH THƯỚC */
+.spinner {
+  width: 24px; /* Tăng từ 20px */
+  height: 24px; /* Tăng từ 20px */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Tăng border width */
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design - CẬP NHẬT CHO KÍCH THƯỚC MỚI */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 0;
+    min-height: 100vh;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-form-container {
+    padding: 24px 10px;
+    margin: 0;
+    max-width: 98vw;
+  }
+  .login-header h1 {
+    font-size: 2rem;
+  }
+  .login-header p {
+    font-size: 1rem;
+  }
+  .login-form {
+    gap: 18px;
+  }
+  .form-options {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .form-group input {
+    padding: 12px 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-header h1 {
+    font-size: 2rem; /* Tăng từ 1.8rem */
+  }
+  
+  .login-form-container {
+    padding: 30px 20px; /* Tăng padding */
+  }
+  
+  .login-button {
+    padding: 18px 24px; /* Giữ kích thước button tốt */
+    font-size: 1.1rem;
+  }
+}
+
+/* Additional animations */
+.login-form-container {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Focus indicators for accessibility */
+.login-button:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+.form-group input:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
