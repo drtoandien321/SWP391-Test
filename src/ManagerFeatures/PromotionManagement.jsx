@@ -479,9 +479,11 @@ const PromotionManagement = () => {
 							<button className="btn-view" onClick={() => openDetailModal(promotion)}>
 								 Chi tiết
 							</button>
-							<button className="btn-edit" onClick={() => openEditModal(promotion)}>
-								 Sửa
-							</button>
+							{promotion.status !== 'Đang hoạt động' && (
+								<button className="btn-edit" onClick={() => openEditModal(promotion)}>
+									 Sửa
+								</button>
+							)}
 							<button className="btn-delete" onClick={() => setDeleteModal({ open: true, promotion })}>
 								 Xóa
 							</button>
